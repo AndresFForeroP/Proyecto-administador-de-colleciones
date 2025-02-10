@@ -1,0 +1,23 @@
+{
+    "libros": {
+        "100 años": {
+            "autor": "shakira",
+            "genero": "comedia",
+            "valoracion": 23
+        }
+    },
+    "peliculas": {
+        "bee movie": {
+            "autor": "yo",
+            "genero": "comedia",
+            "valoracion": 100
+        }
+    },
+    "musica": {
+        "skater boy": {
+            "autor": "avril lavigne",
+            "genero": "rock indie",
+            "valoracion": 100
+        }
+    }
+}
