@@ -2,6 +2,7 @@ import json
 import os
 import modules.Estructurasdatos as es
 from modules.f_generales import limpiar_p,validartipo,pausar_p
+import time as t
 def leer_json(archivo):
     try:
         with open(archivo, "r", encoding='utf-8') as file:
@@ -78,3 +79,123 @@ def agregar_musica(archivo):
     print((f"✅ {nombre_musica} agregado exitosamente"))
     pausar_p()
     limpiar_p()
+def ver_libros(archivo):
+    diccionario = leer_json(archivo)
+    n_libro = 1
+    for libro in diccionario["libros"]:
+        print(f"""
+===============================================================             
+El libro #{n_libro} se llama {libro} su autor es {diccionario['libros'][libro]["autor"]}
+su genero es {diccionario['libros'][libro]["genero"]} y lo valoraste con {diccionario['libros'][libro]["valoracion"]}
+===============================================================""")
+        n_libro += 1
+        t.sleep(0.5)
+    pausar_p()
+def ver_peliculas(archivo):
+    diccionario = leer_json(archivo)
+    n_libro = 1
+    for libro in diccionario["peliculas"]:
+        print(f"""
+===============================================================             
+La pelicula #{n_libro} se llama {libro} su autor es {diccionario['peliculas'][libro]["autor"]}
+su genero es {diccionario['peliculas'][libro]["genero"]} y lo valoraste con {diccionario['peliculas'][libro]["valoracion"]}
+===============================================================""")
+        n_libro += 1
+        t.sleep(0.5)
+    pausar_p()
+def ver_musica(archivo):
+    diccionario = leer_json(archivo)
+    n_libro = 1
+    for libro in diccionario["musica"]:
+        print(f"""
+===============================================================             
+La cancion #{n_libro} se llama {libro} su autor es {diccionario['musica'][libro]["autor"]}
+su genero es {diccionario['musica'][libro]["genero"]} y lo valoraste con {diccionario['musica'][libro]["valoracion"]}
+===============================================================""")
+        n_libro += 1
+        t.sleep(0.5)
+    pausar_p()
+def buscar_elemento_titulo(archivo):
+    nombre_elemento = input('Ingrese el nombre del titulo que desea buscar ')
+    diccionario = leer_json(archivo)
+    for key in diccionario['libros']:
+        if nombre_elemento == key:
+            print(f"""
+===============================================================
+{nombre_elemento} es un libro su autor es {diccionario['libros'][key]["autor"]}
+su genero es {diccionario['libros'][key]["genero"]} y lo valoraste con {diccionario['libros'][key]["valoracion"]} 
+===============================================================""")
+            t.sleep(0.5)
+    for key in diccionario['peliculas']:
+        if nombre_elemento == key:
+            print(f"""
+===============================================================
+{nombre_elemento} es una pelicula su autor es {diccionario['peliculas'][key]["autor"]}
+su genero es {diccionario['peliculas'][key]["genero"]} y lo valoraste con {diccionario['peliculas'][key]["valoracion"]} 
+===============================================================""")
+            t.sleep(0.5)
+    for key in diccionario['musica']:
+        if nombre_elemento == key:
+            print(f"""
+===============================================================
+{nombre_elemento} es una cancion su autor es {diccionario['musica'][key]["autor"]}
+su genero es {diccionario['musica'][key]["genero"]} y lo valoraste con {diccionario['musica'][key]["valoracion"]} 
+===============================================================""")
+            t.sleep(0.5)
+    pausar_p()
+def buscar_elemento_artista(archivo):
+    n_archivo = input('Ingrese el nombre del artista/director o autor del cual desea buscar sus elementos ')
+    diccionario = leer_json(archivo)
+    for key,values in diccionario['libros'].items():
+        if n_archivo == diccionario['libros'][key]['autor']:
+            print(f""" 
+===============================================================
+{key} es un libro su autor es {diccionario['libros'][key]["autor"]}
+su genero es {diccionario['libros'][key]["genero"]} y lo valoraste con {diccionario['libros'][key]["valoracion"]}
+===============================================================""")
+            t.sleep(0.5)
+    for key,values in diccionario['peliculas'].items():
+        if n_archivo == diccionario['peliculas'][key]['autor']:
+            print(f"""
+===============================================================
+{key} es una pelicula su autor es {diccionario['peliculas'][key]["autor"]}
+su genero es {diccionario['peliculas'][key]["genero"]} y lo valoraste con {diccionario['peliculas'][key]["valoracion"]} 
+===============================================================""")
+            t.sleep(0.5)
+    for key,values in diccionario['musica'].items():
+        if n_archivo == diccionario['musica'][key]['autor']:
+            print(f"""
+=============================================================== 
+{key} es una cancion su autor es {diccionario['musica'][key]["autor"]}
+su genero es {diccionario['musica'][key]["genero"]} y lo valoraste con {diccionario['musica'][key]["valoracion"]} 
+===============================================================""")
+            t.sleep(0.5)
+    pausar_p()
+def buscar_elemento_genero(archivo):
+    n_archivo = input('Ingrese el nombre del genero del cual desea buscar sus elementos ')
+    diccionario = leer_json(archivo)
+    for key,values in diccionario['libros'].items():
+        if n_archivo == diccionario['libros'][key]['genero']:
+            print(f""" 
+===============================================================
+{key} es un libro su autor es {diccionario['libros'][key]["autor"]}
+su genero es {diccionario['libros'][key]["genero"]} y lo valoraste con {diccionario['libros'][key]["valoracion"]}
+===============================================================""")
+            t.sleep(0.5)
+    for key,values in diccionario['peliculas'].items():
+        if n_archivo == diccionario['peliculas'][key]['genero']:
+            print(f"""
+===============================================================
+{key} es una pelicula su autor es {diccionario['peliculas'][key]["autor"]}
+su genero es {diccionario['peliculas'][key]["genero"]} y lo valoraste con {diccionario['peliculas'][key]["valoracion"]} 
+===============================================================""")
+            t.sleep(0.5)
+    for key,values in diccionario['musica'].items():
+        if n_archivo == diccionario['musica'][key]['genero']:
+            print(f"""
+=============================================================== 
+{key} es una cancion su autor es {diccionario['musica'][key]["autor"]}
+su genero es {diccionario['musica'][key]["genero"]} y lo valoraste con {diccionario['musica'][key]["valoracion"]} 
+===============================================================""")
+            t.sleep(0.5)
+    pausar_p()

@@ -4,6 +4,16 @@
             "autor": "shakira",
             "genero": "comedia",
             "valoracion": 23
+        },
+        "nemo": {
+            "autor": "shakira",
+            "genero": "sadss",
+            "valoracion": 1
+        },
+        "jkj": {
+            "autor": "dsd",
+            "genero": "sad",
+            "valoracion": 1
         }
     },
     "peliculas": {
@@ -11,6 +21,11 @@
             "autor": "yo",
             "genero": "comedia",
             "valoracion": 100
+        },
+        "skdjs": {
+            "autor": "shakira",
+            "genero": "sadds",
+            "valoracion": 1
         }
     },
     "musica": {
@@ -18,6 +33,11 @@
             "autor": "avril lavigne",
             "genero": "rock indie",
             "valoracion": 100
+        },
+        "asdsa": {
+            "autor": "dsa",
+            "genero": "dsa",
+            "valoracion": 1
         }
     }
 }
