@@ -4,22 +4,34 @@ import modules.Estructurasdatos as es
 from modules.f_generales import limpiar_p,validartipo,pausar_p
 import modules.menus as menus
 import time as t
+#permite cargar un archivo.json en un variable como un diccionario,esto permite trabajar
+#con toda la informacion que tiene el json, si el archivo no se encuentra devuelve un
+#diccionario vacio
 def leer_json(archivo):
     try:
         with open(archivo, "r", encoding='utf-8') as file:
             return json.load(file)
     except FileNotFoundError:
         return {}
+#Permite agregar informacion al diccionario,se almacena el archivo en un diccionario y luego
+#luego se le agrega al diccionario, al final con la funcion escribir sobreescribe el archivo.json
 def actualizar_json(archivo,msg):
     diccionario = leer_json(archivo)
     diccionario.update(msg)
     escribir_json(archivo,diccionario)
+#Permite sobreescribir el archivo.json, casi siempre se le envia un diccionario para que
+#lo sobreescriba al archivo original
 def escribir_json(archivo,msg):
     with open(archivo,'w',encoding="utf-8") as file:
         json.dump(msg,file,indent=4,ensure_ascii=False)
+#si el archivo no existe, crea el archivo con una estructura de iniciacion sencilla
+#la estructura que se agrega al diccionario es dicionario = {libros:'',peliculas:'',musica:''}
 def inizializar_archivo(archivo):
     if not os.path.isfile(archivo):
         escribir_json(archivo,es.estructura_inicializacion)
+#carga el archivo.json, luego pide los datos necesarios crea un diccionario con los datos
+#al final se le agrega al diccionario.json el diccionario con los datos que le pedimos al usurio
+#y sobreescribe el archivo original
 def agregar_libro(archivo):
     diccionario = leer_json(archivo)
     while True:
@@ -43,6 +55,8 @@ def agregar_libro(archivo):
     print((f"✅ {nombre_libro} agregado exitosamente"))
     pausar_p()
     limpiar_p()
+#es casi la misma funcion que la de agregar libro y la misma que se va a usar con la musica
+#solo que llena los datos para las peliculas
 def agregar_pelicula(archivo):
     diccionario = leer_json(archivo)
     while True:
@@ -89,6 +103,8 @@ def agregar_musica(archivo):
     print((f"✅ {nombre_musica} agregado exitosamente"))
     pausar_p()
     limpiar_p()
+#esta funcion como las la de ver peliculas y musica recorre el diccionario de su 
+#determinada catergoria y va imprimiendo la informacion de cada elemento
 def ver_libros(archivo):
     diccionario = leer_json(archivo)
     n_libro = 1
@@ -125,6 +141,9 @@ su genero es {diccionario['musica'][libro]["genero"]} y lo valoraste con {diccio
         n_libro += 1
         t.sleep(0.5)
     pausar_p()
+#esta funcion le pide al usuario el titulo que desea buscar,luego si lo encuentra
+#en cualquier categoria imprime los datos del elemento buscado
+#esta funcion es casi igual para los otros datos como autor y genero
 def buscar_elemento_titulo(archivo):
     nombre_elemento = input('Ingrese el nombre del titulo que desea buscar ')
     diccionario = leer_json(archivo)
@@ -153,6 +172,8 @@ su genero es {diccionario['musica'][key]["genero"]} y lo valoraste con {dicciona
 ===============================================================""")
             t.sleep(0.5)
     pausar_p()
+#tanto para esta funcion como la de genero se usa una iteracion en el diccionario
+#con .items para llegar hasta los datos que queremos llegar
 def buscar_elemento_artista(archivo):
     n_archivo = input('Ingrese el nombre del artista/director o autor del cual desea buscar sus elementos ')
     diccionario = leer_json(archivo)
@@ -209,6 +230,9 @@ su genero es {diccionario['musica'][key]["genero"]} y lo valoraste con {dicciona
 ===============================================================""")
             t.sleep(0.5)
     pausar_p()
+#esta funcion pide al usuario el elemento que desea eliminar por el titulo
+#revisa en cada key de categorias para saber en cual esta, luego pide 
+#el nombre nuedo que le quiere poner al elemento usa las keys del diccionario y hace el cambio con .pop()
 def editar_titulo(archivo):
     diccionario = leer_json(archivo)
     esta = False
@@ -235,6 +259,8 @@ def editar_titulo(archivo):
         print('el elemento no esta')
     else:
         escribir_json(archivo,diccionario)
+#Tanto esta funcion como la de genero  y la de valoracion sirve casi igual que la de titulo
+#pero esta entra mas profundo en el diccionario para poder editar el dato exacto
 def editar_autor(archivo):
     diccionario = leer_json(archivo)
     esta = False
@@ -322,6 +348,8 @@ def editar_valoracion(archivo):
         print('el elemento no esta')
     else:
         escribir_json(archivo,diccionario)
+#esta funcion elimina, pide en que categoria este el elemento que deseas elimiar y luego con la funcion.pop()
+#elimina el elemnto que el usuario indica
 def eliminar_elemento(archivo):
     diccionario = leer_json(archivo)
     tipo = validartipo('int',menus.menu_elegir_tipo )
@@ -345,6 +373,8 @@ def eliminar_elemento(archivo):
             else:
                 diccionario['musica'].pop(titulo)
                 print((f"✅ {titulo} se ha eliminado exitosamente de la categoria de musica "))
+#esta funcion usa las funciones de ver libros,ver peliculas y ver musica para mostrar todo lo que contiene
+#la coleccion
 def mostrar_todo(archivo):
     print('Los libros guardados son')
     ver_libros(archivo)

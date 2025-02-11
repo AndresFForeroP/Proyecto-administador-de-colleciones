@@ -5,15 +5,20 @@
             "genero": "dasd",
             "valoracion": 1
         },
-        "ñeñe": {
-            "autor": "yo",
-            "genero": "asdawsd",
-            "valoracion": 1
-        },
         "878787": {
             "autor": "'098",
             "genero": "9876543",
             "valoracion": 7
+        },
+        "sgdfg": {
+            "autor": "61",
+            "genero": "",
+            "valoracion": 15
+        },
+        "tutu": {
+            "autor": "yo",
+            "genero": "asdawsd",
+            "valoracion": 1
         }
     },
     "peliculas": {

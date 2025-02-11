@@ -2,10 +2,14 @@ import modules.f_generales as fg
 import modules.menus as menus
 import modules.f_coleccion as fc
 import os
+#Se especifica la ubicacion y el nombre del archivo que se va a usar durante todo el programa
 ARCHIVO = os.path.join('data/','registros.json')
+#se inicializa el archivo
 fc.inizializar_archivo(ARCHIVO)
 menu_principal = 1
 while menu_principal != 9:
+    #estas validaciones se usan durante todo el codigo para validar que el usuario solo ingrese el tipo de dato que quiero
+    #y en cada menu se usa un match para seleccionar las opciones
     menu_principal = fg.validartipo('int',menus.administrar_coleccion)
     match menu_principal:
         case 1:
@@ -58,3 +62,4 @@ while menu_principal != 9:
                         fc.ver_peliculas(ARCHIVO)
                     case 3:
                         fc.ver_musica(ARCHIVO)
+print('SALISTE DEL PROGRAMA')

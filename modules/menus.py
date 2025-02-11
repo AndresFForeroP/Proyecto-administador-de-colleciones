@@ -1,3 +1,4 @@
+#menus generales que usare durante todo el codigo
 administrar_coleccion = """===========================================
         Administrador de Colección
 ===========================================
