@@ -13,7 +13,7 @@ def leer_json(archivo):
             return json.load(file)
     except FileNotFoundError:
         return {}
-#Permite agregar informacion al diccionario,se almacena el archivo en un diccionario y luego
+#Permite agregar informacion al diccionario,se almacena el archivo en un diccionario y
 #luego se le agrega al diccionario, al final con la funcion escribir sobreescribe el archivo.json
 def actualizar_json(archivo,msg):
     diccionario = leer_json(archivo)
@@ -52,7 +52,7 @@ def agregar_libro(archivo):
     'valoracion':valoracion }}
     diccionario['libros'].update(nuevo_libro)
     escribir_json(archivo,diccionario)
-    print((f"✅ {nombre_libro} agregado exitosamente"))
+    print(f"✅ {nombre_libro} agregado exitosamente")
     pausar_p()
     limpiar_p()
 #es casi la misma funcion que la de agregar libro y la misma que se va a usar con la musica
@@ -61,8 +61,8 @@ def agregar_pelicula(archivo):
     diccionario = leer_json(archivo)
     while True:
         nombre_pelicula = input('Ingrese el nombre de la pelicula que desea agregar ')
-        if nombre_pelicula in diccionario['libros']:
-            print('el equipo ya esta registrado')
+        if nombre_pelicula in diccionario['peliculas']:
+            print('la pelicula ya esta registrado')
         else:
             break
     autor = input(f'Ingrese el autor de {nombre_pelicula} ')
@@ -84,8 +84,8 @@ def agregar_musica(archivo):
     diccionario = leer_json(archivo)
     while True:
         nombre_musica = input('Ingrese el nombre de la cansion que desea agregar ')
-        if nombre_musica in diccionario['libros']:
-            print('el equipo ya esta registrado')
+        if nombre_musica in diccionario['musica']:
+            print('esa cancion ya esta registrado')
         else:
             break
     autor = input(f'Ingrese el autor de {nombre_musica} ')
