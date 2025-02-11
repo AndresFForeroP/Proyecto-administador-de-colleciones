@@ -20,16 +20,7 @@ while menu_principal != 9:
                     case 3:
                         fc.agregar_musica(ARCHIVO)
         case 2:
-            menu_ver_elementos = 1
-            while menu_ver_elementos != 9:
-                menu_ver_elementos = fg.validartipo('int',menus.menu_ver_elementos)
-                match menu_ver_elementos:
-                    case 1:
-                        fc.ver_libros(ARCHIVO)
-                    case 2:
-                        fc.ver_peliculas(ARCHIVO)
-                    case 3:
-                        fc.ver_musica(ARCHIVO)
+            fc.mostrar_todo(ARCHIVO)
         case 3:
             menu_buscar_elemento = 1
             while menu_buscar_elemento != 9:
@@ -41,3 +32,29 @@ while menu_principal != 9:
                         fc.buscar_elemento_artista(ARCHIVO)
                     case 3:
                         fc.buscar_elemento_genero(ARCHIVO)
+        case 4:
+            menu_editar_elemento = 1
+            while menu_editar_elemento != 9:
+                menu_editar_elemento = fg.validartipo('int',menus.menu_editar_elemento)
+                match menu_editar_elemento:
+                    case 1:
+                        fc.editar_titulo(ARCHIVO)
+                    case 2:
+                        fc.editar_autor(ARCHIVO)
+                    case 3:
+                        fc.editar_genero(ARCHIVO)
+                    case 4:
+                        fc.editar_valoracion(ARCHIVO)
+        case 5:
+            fc.eliminar_elemento(ARCHIVO)
+        case 6:
+            menu_ver_elementos = 1
+            while menu_ver_elementos != 9:
+                menu_ver_elementos = fg.validartipo('int',menus.menu_ver_elementos)
+                match menu_ver_elementos:
+                    case 1:
+                        fc.ver_libros(ARCHIVO)
+                    case 2:
+                        fc.ver_peliculas(ARCHIVO)
+                    case 3:
+                        fc.ver_musica(ARCHIVO)

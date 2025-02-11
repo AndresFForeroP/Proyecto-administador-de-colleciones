@@ -1,43 +1,38 @@
 {
     "libros": {
-        "100 años": {
-            "autor": "shakira",
-            "genero": "comedia",
-            "valoracion": 23
-        },
-        "nemo": {
-            "autor": "shakira",
-            "genero": "sadss",
+        "daskljads": {
+            "autor": "asdasd",
+            "genero": "dasd",
             "valoracion": 1
         },
-        "jkj": {
-            "autor": "dsd",
-            "genero": "sad",
+        "ñeñe": {
+            "autor": "yo",
+            "genero": "asdawsd",
             "valoracion": 1
+        },
+        "878787": {
+            "autor": "'098",
+            "genero": "9876543",
+            "valoracion": 7
         }
     },
     "peliculas": {
-        "bee movie": {
-            "autor": "yo",
-            "genero": "comedia",
+        "los hechiceros de weberly place ": {
+            "autor": "sads",
+            "genero": "sads",
             "valoracion": 100
         },
-        "skdjs": {
-            "autor": "shakira",
-            "genero": "sadds",
+        "moahna": {
+            "autor": "benito",
+            "genero": "terror",
             "valoracion": 1
         }
     },
     "musica": {
-        "skater boy": {
-            "autor": "avril lavigne",
-            "genero": "rock indie",
-            "valoracion": 100
-        },
-        "asdsa": {
-            "autor": "dsa",
-            "genero": "dsa",
-            "valoracion": 1
+        "hola": {
+            "autor": "sadsa",
+            "genero": "assad",
+            "valoracion": 23
         }
     }
 }

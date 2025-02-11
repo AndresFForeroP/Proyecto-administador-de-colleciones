@@ -7,10 +7,9 @@ administrar_coleccion = """===========================================
 4. Editar un Elemento
 5. Eliminar un Elemento
 6. Ver Elementos por Categoría
-7. Guardar y Cargar Colección
 9. Salir
 ===========================================
-Selecciona una opción (1-7) o 9 para salir """
+Selecciona una opción (1-6) o 9 para salir """
 añadir_elemento = """
 ===========================================
         Añadir un Nuevo Elemento
@@ -44,3 +43,25 @@ menu_buscar_elemento = """
 9. Regresar al Menú Principal
 ===========================================
 Selecciona una opción (1-3) o 9 para salir : """
+menu_editar_elemento = """
+===========================================
+        Editar un Elemento
+===========================================
+¿Qué tipo de cambio deseas realizar?
+1. Editar Título
+2. Editar Autor/Director/Artista
+3. Editar Género
+4. Editar Valoración
+9. Regresar al Menú Principal
+===========================================
+Selecciona una opción (1-4) o 9 para salir : """
+menu_elegir_tipo = """
+=====================================================
+        Categorias de elementos
+=====================================================
+¿De que categoria es el elemento que deseas eliminar?
+1.Libros
+2.Peliculas
+3.Musica
+=====================================================
+Selecciona una opcion (1-3) """
