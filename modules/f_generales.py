@@ -36,3 +36,9 @@ def validartipo(tipo,msg):
             else:
                 limpiar_p()
                 return x
+        case 'alpha':
+            x = input(msg)
+            if x.isalpha() == False:
+                print('No puedes ingresar numeros')
+                pausar_p()
+                return validartipo(tipo,msg)

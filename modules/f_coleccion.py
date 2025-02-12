@@ -41,7 +41,7 @@ def agregar_libro(archivo):
         else:
             break
     autor = input(f'Ingrese el autor de {nombre_libro} ')
-    genero = input(f'Ingrese el genero de {nombre_libro} ')
+    genero = validartipo('alpha',f'Ingrese el genero de {nombre_libro} ')
     valoracion = validartipo('int',f'Ingrese la valoracion de {nombre_libro} (1-100) ')
     while valoracion < 1 or valoracion > 100:
         print('la valoracion solo es entre (1-100)')
@@ -66,7 +66,7 @@ def agregar_pelicula(archivo):
         else:
             break
     autor = input(f'Ingrese el autor de {nombre_pelicula} ')
-    genero = input(f'Ingrese el genero de {nombre_pelicula} ')
+    genero = validartipo('alpha',f'Ingrese el genero de {nombre_pelicula} ')
     valoracion = validartipo('int',f'Ingrese la valoracion de {nombre_pelicula} (1-100)')
     while valoracion < 1 or valoracion > 100:
         print('la valoracion solo es entre (1-100)')
@@ -89,7 +89,7 @@ def agregar_musica(archivo):
         else:
             break
     autor = input(f'Ingrese el autor de {nombre_musica} ')
-    genero = input(f'Ingrese el genero de {nombre_musica} ')
+    genero = validartipo('alpha',f'Ingrese el genero de {nombre_musica} ')
     valoracion = validartipo('int',f'Ingrese la valoracion de {nombre_musica} (1-100)')
     while valoracion < 1 or valoracion > 100:
         print('la valoracion solo es entre (1-100)')
