@@ -175,7 +175,7 @@ su genero es {diccionario['musica'][key]["genero"]} y lo valoraste con {dicciona
 #tanto para esta funcion como la de genero se usa una iteracion en el diccionario
 #con .items para llegar hasta los datos que queremos llegar
 def buscar_elemento_artista(archivo):
-    n_archivo = input('Ingrese el nombre del artista/director o autor del cual desea buscar sus elementos ')
+    n_archivo = validartipo('alpha','Ingrese el nombre del artista/director o autor del cual desea buscar sus elementos ')
     diccionario = leer_json(archivo)
     for key,values in diccionario['libros'].items():
         if n_archivo == diccionario['libros'][key]['autor']:
@@ -268,19 +268,19 @@ def editar_autor(archivo):
     if n_elemento in diccionario['libros']:
         esta = True
         print(f'{n_elemento} es un libro y su autor es {diccionario['libros'][n_elemento]['autor']}')
-        n_nombre = input(f'Ingrese el nombre del nuevo autor de {n_elemento} ')
+        n_nombre = validartipo('alpha',f'Ingrese el nombre del nuevo autor de {n_elemento} ')
         diccionario['libros'][n_elemento]['autor'] = n_nombre
         print((f"✅ {n_elemento} a cambiado su autor a {n_nombre} exitosamente"))
     if n_elemento in diccionario['peliculas']:
         esta = True
         print(f'{n_elemento} es una pelicula y su autor es {diccionario['peliculas'][n_elemento]['autor']}')
-        n_nombre = input(f'Ingrese el nombre del nuevo autor de {n_elemento} ')
+        n_nombre = validartipo('alpha',f'Ingrese el nombre del nuevo autor de {n_elemento} ')
         diccionario['peliculas'][n_elemento]['autor'] = n_nombre
         print((f"✅ {n_elemento} a cambiado su autor a {n_nombre} exitosamente"))
     if n_elemento in diccionario['musica']:
         esta = True
         print(f'{n_elemento} es una cancion y su autor es {diccionario['musica'][n_elemento]['autor']} ')
-        n_nombre = input(f'Ingrese el nuevo titulo de {n_elemento} ')
+        n_nombre = validartipo('alpha',f'Ingrese el nombre del nuevo autor de {n_elemento} ')
         diccionario['musica'][n_elemento]['autor'] = n_nombre
         print((f"✅ {n_elemento} a cambiado a su autor por {n_nombre} exitosamente"))
     if esta == False:
