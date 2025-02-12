@@ -42,3 +42,6 @@ def validartipo(tipo,msg):
                 print('No puedes ingresar numeros')
                 pausar_p()
                 return validartipo(tipo,msg)
+            else: 
+                limpiar_p()
+                return x
